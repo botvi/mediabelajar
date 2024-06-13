@@ -1,0 +1,88 @@
+body {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    background-color: #26355d;
+    font-style: normal;
+}
+
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hidden-image {
+    display: none;
+}
+
+.result-card {
+    margin-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    border-radius: 1.5rem;
+    filter: drop-shadow(25px 8px 40px #ffffff);
+    background: rgb(255 255 255 / 45%);
+    -webkit-backdrop-filter: blur(8px);
+    -moz-backdrop-filter: blur(8px);
+    -ms-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    backface-visibility: hidden;
+}
+
+.btn-submit {
+    background-color: rgb(246, 172, 26);
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background-color: rgb(220, 150, 20);
+    color: #fff;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    50% {
+        transform: translateX(5px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.infotitle {
+    display: inline-block; /* Ensure it's an inline block element for the animation to work */
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+/* mmodal */
+
+.modal-content {
+    border-radius: 1rem;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.btn-close-custom {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-close-custom img {
+    width: 40px;
+    height: 40px;
+}
+/* mmodal */

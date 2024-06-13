@@ -1,0 +1,195 @@
+body {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  background-color: #26355d;
+  font-style: normal;
+}
+
+/* Custom styles for responsiveness */
+.col-12 {
+  padding: 0;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.keterangan {
+  display: inline-block; /* Ensure it's an inline block element for the animation to work */
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+/* mmodal */
+
+.modal-content {
+  border-radius: 1rem;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.btn-close-custom {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-close-custom img {
+  width: 40px;
+  height: 40px;
+}
+/* mmodal */
+
+.bintang-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px;
+  white-space: nowrap;
+  margin-top: 100px;
+  position: relative;
+}
+.bintang-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.bintang-container::-webkit-scrollbar {
+  width: 4px; /* Set the width of the scrollbar */
+  height: 4px; /* Set the height of the scrollbar */
+}
+
+.bintang-container::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Set scrollbar thumb color to transparent */
+}
+
+.bintang-container::-webkit-scrollbar-track {
+  background-color: transparent; /* Set scrollbar track color to transparent */
+}
+
+.bintang {
+  margin: 0 20px;
+  position: relative;
+  width: max-content;
+}
+
+.bintang img {
+  display: block;
+  margin: auto;
+}
+
+#leo img {
+  width: 300px;
+  height: auto;
+}
+#virgo img {
+  width: 300px;
+  height: auto;
+}
+#libra img {
+  width: 300px;
+  height: auto;
+}
+#scorpio img {
+  width: 300px;
+  height: auto;
+}
+#sagitarius img {
+  width: 300px;
+  height: auto;
+}
+#capricorn img {
+  width: 300px;
+  height: auto;
+}
+#aquarius img {
+  width: 300px;
+  height: auto;
+}
+#pisces img {
+  width: 300px;
+  height: auto;
+}
+#aries img {
+  width: 300px;
+  height: auto;
+}
+#taurus img {
+  width: 300px;
+  height: auto;
+}
+#gemini img {
+  width: 300px;
+  height: auto;
+}
+#cancer img {
+  width: 300px;
+  height: auto;
+}
+
+.bintang-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.bintang-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.bintang-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@keyframes floatUpAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatDownAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Exclude floating animation for the sun */
+.bintang:nth-child(odd) {
+  animation: floatUpAnimation 3s ease-in-out infinite alternate;
+}
+
+.bintang:nth-child(even) {
+  animation: floatDownAnimation 3s ease-in-out infinite alternate;
+}

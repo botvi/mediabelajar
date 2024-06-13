@@ -1,0 +1,194 @@
+body {
+    font-family: "Poetsen One", sans-serif;
+    background-color: #26355d;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: #036444;
+}
+
+.app {
+    background: #ffffff7b;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+    /* Added margin to move the app content below the navbar */
+}
+
+.app h1 {
+    font-size: 25px;
+    color: #036444;
+    font-weight: bold;
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 0.7rem;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
+    font-size: 18px;
+    color: #00291c;
+    font-weight: 100;
+}
+
+#answer-buttons {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: #fff;
+    color: #00291c;
+    font-weight: 100;
+    border: 1px solid #00291c;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    transition: all 0.25s linear;
+}
+
+.btn:hover:not([disabled]) {
+    background-color: #00291c;
+    color: #fff;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+}
+
+.btn.correct {
+    background-color: #036444;
+    color: #fff;
+    border-color: #036444;
+}
+
+.btn.incorrect {
+    background-color: #e36060;
+    color: #fff;
+    border-color: #e36060;
+}
+
+#next-btn {
+    background-color: #00291c;
+    color: #fff;
+    font-weight: 100;
+    /* width: 140px;
+    padding: 12px;
+    margin: 10px 0; */
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.2s linear;
+    visibility: hidden;
+}
+
+#next-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateX(5px) rotate(5deg);
+    }
+
+    75% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.back-btn {
+    display: inline-block;
+    /* Ensure it's an inline block element for the animation to work */
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+.back-btn img {
+    transition: transform 0.3s ease;
+}
+
+.back-btn img:hover {
+    transform: scale(1.1);
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    50% {
+        transform: translateX(5px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.infotitle {
+    display: inline-block; /* Ensure it's an inline block element for the animation to work */
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+/* mmodal */
+
+.modal-content {
+    border-radius: 1rem;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.btn-close-custom {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-close-custom img {
+    width: 40px;
+    height: 40px;
+}
+/* mmodal */

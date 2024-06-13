@@ -1,0 +1,197 @@
+body {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  background-color: #26355d;
+  font-style: normal;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.infotitle {
+  display: inline-block; /* Ensure it's an inline block element for the animation to work */
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+.planet img {
+  cursor: pointer;
+}
+.planet img:hover {
+  transform: scale(1.1);
+}
+
+/* mmodal */
+
+.modal-content {
+  border-radius: 1rem;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.btn-close-custom {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-close-custom img {
+  width: 40px;
+  height: 40px;
+}
+/* mmodal */
+
+/* Custom styles for responsiveness */
+.col-12 {
+  padding: 0;
+}
+.planet-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px;
+  white-space: nowrap;
+  margin-top: 100px;
+  position: relative;
+}
+.planet-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.planet-container::-webkit-scrollbar {
+  width: 4px; /* Set the width of the scrollbar */
+  height: 4px; /* Set the height of the scrollbar */
+}
+
+.planet-container::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Set scrollbar thumb color to transparent */
+}
+
+.planet-container::-webkit-scrollbar-track {
+  background-color: transparent; /* Set scrollbar track color to transparent */
+}
+
+.planet {
+  margin: 0 20px;
+  position: relative;
+  width: max-content;
+}
+
+.planet img {
+  display: block;
+  margin: auto;
+}
+
+#matahari img {
+  width: 400px;
+  height: auto;
+}
+
+#merkurius img {
+  width: 100px;
+  height: auto;
+}
+
+#venus img {
+  width: 200px;
+  height: auto;
+}
+
+#bumi img {
+  width: 200px;
+  height: auto;
+}
+
+#mars img {
+  width: 160px;
+  height: auto;
+}
+
+#jupiter img {
+  width: 360px;
+  height: auto;
+}
+
+#saturnus img {
+  width: 320px;
+  height: auto;
+}
+
+#uranus img {
+  width: 280px;
+  height: auto;
+}
+
+#neptunus img {
+  width: 280px;
+  height: auto;
+}
+
+.planet-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.planet-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.planet-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@keyframes floatUpAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatDownAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Exclude floating animation for the sun */
+.planet:nth-child(odd):not(#matahari) {
+  animation: floatUpAnimation 3s ease-in-out infinite alternate;
+}
+
+.planet:nth-child(even) {
+  animation: floatDownAnimation 3s ease-in-out infinite alternate;
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/zonawaktu.css">
+    <link rel="stylesheet" href="assets/css/particle.css">
+    <title>Tata Surya</title>
+    <style>
+        #globe-container {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #globe-container canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="rotasibumi.html">
+                <img src="assets/btn/back.png" alt="music on" width="60" height="auto" />
+            </a>
+            <div class="navbar-brand text-start col">
+                <div class="text-light">
+                    <h2><span style="color: #ffffff;">Rotasi</span> <span style="color: rgb(246, 172, 26);">Bumi
+                        </span>
+                        <h4><span style="color: rgb(246, 172, 26);">Zona Waktu</span></h4>
+                    </h2>
+                </div>
+            </div>
+            <div class="navbar-brand ">
+                <a class="text-light keterangan" href="#" data-bs-toggle="modal" data-bs-target="#ketModal">
+                    <img src="assets/btn/btn_ket.png" width="60px" alt="">
+                </a>
+            </div>
+
+        </div>
+    </nav>
+    <!-- KET -->
+    <div class="modal fade" id="ketModal" tabindex="-1" aria-labelledby="ketModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <!-- Add the modal-dialog-centered class to vertically center the modal and modal-lg for large screens -->
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title" id="aboutModalLabel"><span style="color: #ffffff;">Zona Waktu </span>
+                    </h5>
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                        <img src="assets/btn/close_2.png" alt="Close button">
+                    </button>
+                </div>
+                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
+                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
+                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
+                    <br><br>
+                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
+                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
+                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid. </div>
+            </div>
+        </div>
+    </div>
+    <!-- KET -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 col-12 text-center">
+                <div id="globe-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas for Particle Effect -->
+    <!-- <canvas id="particleCanvas"></canvas> -->
+
+    <!-- JavaScript -->
+    <!-- <script src="assets/js/particles.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Membuat fungsi untuk membuat tekstur dari kanvas
+        function createTexturedCanvas(imageSrc, bgColor) {
+            // Membuat elemen kanvas
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            const image = new Image();
+
+            // Mengatur ukuran kanvas sesuai dengan ukuran gambar
+            image.onload = function () {
+                canvas.width = image.width;
+                canvas.height = image.height;
+
+                // Mengatur warna latar belakang
+                context.fillStyle = bgColor;
+                context.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Menggambar gambar di atas warna latar belakang
+                context.drawImage(image, 0, 0);
+
+                // Mengupdate tekstur pada material globe
+                globe.material.map = new THREE.CanvasTexture(canvas);
+                globe.material.needsUpdate = true;
+            };
+
+            image.src = imageSrc;
+        }
+
+        // Inisialisasi Three.js
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true // Mengatur alpha ke true untuk background transparan
+        });
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        // Fungsi untuk mengatur ukuran renderer sesuai ukuran elemen kolom
+        function setRendererSize() {
+            const container = document.querySelector('#globe-container');
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+
+        // Menambahkan renderer ke elemen kontainer
+        document.getElementById('globe-container').appendChild(renderer.domElement);
+
+        // Panggil fungsi untuk mengatur ukuran renderer
+        setRendererSize();
+
+        // Tambahkan event listener untuk menyesuaikan ukuran renderer ketika jendela diubah ukurannya
+        window.addEventListener('resize', setRendererSize);
+
+        // Membuat bola dunia
+        const geometry = new THREE.SphereGeometry(5, 32, 32); // Radius, Segments, Segments
+        const material = new THREE.MeshBasicMaterial(); // Material kosong untuk sementara
+        const globe = new THREE.Mesh(geometry, material);
+        scene.add(globe);
+
+        // Mengatur kamera
+        camera.position.z = 10;
+
+        // Membuat tekstur dengan latar belakang warna
+        createTexturedCanvas('assets/gif/flatworld.png',
+            '#83B4FF'); // Ganti dengan warna latar belakang yang diinginkan
+
+        // Variabel untuk menyimpan posisi mouse
+        let mouseX = 0;
+        let mouseY = 0;
+        let isDragging = false;
+
+        // Fungsi untuk menangani event mousemove
+        function onMouseMove(event) {
+            if (!isDragging) return;
+            // Hitung perubahan posisi mouse
+            const deltaX = event.clientX - mouseX;
+            const deltaY = event.clientY - mouseY;
+
+            // Rotasi globe sesuai perubahan posisi mouse
+            globe.rotation.y += deltaX * 0.005;
+            globe.rotation.x += deltaY * 0.005;
+
+            // Update posisi mouse
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        }
+
+        // Fungsi untuk menangani event mousedown
+        function onMouseDown(event) {
+            isDragging = true;
+            // Update posisi mouse saat tombol mouse ditekan
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+
+            // Tambahkan event listener mousemove saat tombol mouse ditekan
+            document.addEventListener('mousemove', onMouseMove);
+        }
+
+        // Fungsi untuk menangani event mouseup
+        function onMouseUp() {
+            isDragging = false;
+            // Hapus event listener mousemove saat tombol mouse dilepas
+            document.removeEventListener('mousemove', onMouseMove);
+        }
+
+        // Tambahkan event listener mousedown dan mouseup ke kontainer
+        document.getElementById('globe-container').addEventListener('mousedown', onMouseDown);
+        document.addEventListener('mouseup', onMouseUp);
+
+        // Fungsi animasi
+        function animate() {
+            requestAnimationFrame(animate);
+
+            renderer.render(scene, camera);
+        }
+
+        // Panggil fungsi animasi
+        animate();
+    </script>
+</body>
+
+</html>
