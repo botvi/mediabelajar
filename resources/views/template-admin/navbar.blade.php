@@ -58,7 +58,7 @@
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item active">
-            <a href="/" class="menu-link">
+            <a href="/dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
@@ -67,6 +67,12 @@
             <a href="/ujikompetensi" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-notepad"></i>
                 <div data-i18n="Analytics">Uji Kompetensi</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="/tebak-gambar" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-file-image"></i>
+                <div data-i18n="Analytics">Tebak Gambar</div>
             </a>
         </li>
 

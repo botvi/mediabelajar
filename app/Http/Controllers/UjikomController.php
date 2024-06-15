@@ -8,23 +8,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class UjikomController extends Controller
 {
-
     public function show()
     {
-        // Fetch all UjiKom records
         $ujiKoms = UjiKom::all();
-
-        // Pass the data to the view
         return view('page.ujikom.index', compact('ujiKoms'));
     }
 
     public function index()
     {
         try {
-            // Ambil semua data Ujikom dari database
             $ujikoms = Ujikom::all();
-
-            // Ubah format data sesuai dengan yang diinginkan
             $questions = [];
             foreach ($ujikoms as $ujikom) {
                 $questionData = [
@@ -33,55 +26,94 @@ class UjikomController extends Controller
                 ];
                 $questions[] = $questionData;
             }
-
-            // Kembalikan data dalam format JSON
             return response()->json($questions, 200);
         } catch (\Exception $e) {
-            // Jika terjadi kesalahan, kembalikan respons dengan pesan error
             return response()->json(['message' => 'Failed to fetch Ujikom data', 'error' => $e->getMessage()], 500);
         }
     }
+
     public function create()
     {
         return view('page.ujikom.create');
     }
 
     public function store(Request $request)
-{
-    try {
-        // Validate the incoming request data
-        $validatedData = $request->validate([
-            'questions.*.question' => 'required|string',
-            'questions.*.answers.*.text' => 'required|string',
-            'questions.*.correct_answer' => 'required|numeric|min:0|max:3', // Assuming answers are indexed from 0 to 3
-        ]);
+    {
+        try {
+            $validatedData = $request->validate([
+                'questions.*.question' => 'required|string',
+                'questions.*.answers.*.text' => 'required|string',
+                'questions.*.correct_answer' => 'required|numeric|min:0|max:3',
+            ]);
 
-        // Save data to the database
-        foreach ($validatedData['questions'] as $questionData) {
-            $ujikom = new Ujikom();
-            $ujikom->question = $questionData['question'];
+            foreach ($validatedData['questions'] as $questionData) {
+                $ujikom = new Ujikom();
+                $ujikom->question = $questionData['question'];
+                $answers = [];
+                foreach ($questionData['answers'] as $index => $answerData) {
+                    $answers[] = [
+                        'text' => $answerData['text'],
+                        'correct' => $index == $questionData['correct_answer']
+                    ];
+                }
+                $ujikom->answers = $answers;
+                $ujikom->save();
+            }
+
+            Alert::success('Success', 'Ujikom saved successfully');
+            return redirect()->route('ujikom.show');
+        } catch (\Exception $e) {
+            Alert::error('Error', 'Failed to save Ujikom: ' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
+    }
+
+    public function edit($id)
+    {
+        $ujikom = Ujikom::findOrFail($id);
+        return view('page.ujikom.update', compact('ujikom'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $validatedData = $request->validate([
+                'question' => 'required|string',
+                'answers.*.text' => 'required|string',
+                'correct_answer' => 'required|numeric|min:0|max:3',
+            ]);
+
+            $ujikom = Ujikom::findOrFail($id);
+            $ujikom->question = $validatedData['question'];
             $answers = [];
-            foreach ($questionData['answers'] as $index => $answerData) {
+            foreach ($validatedData['answers'] as $index => $answerData) {
                 $answers[] = [
                     'text' => $answerData['text'],
-                    'correct' => $index == $questionData['correct_answer']
+                    'correct' => $index == $validatedData['correct_answer']
                 ];
             }
-            $ujikom->answers = $answers; // Save as array
+            $ujikom->answers = $answers;
             $ujikom->save();
+
+            Alert::success('Success', 'Ujikom updated successfully');
+            return redirect()->route('ujikom.show');
+        } catch (\Exception $e) {
+            Alert::error('Error', 'Failed to update Ujikom: ' . $e->getMessage());
+            return redirect()->back()->withInput();
         }
-
-        // Show success notification using SweetAlert
-        Alert::success('Success', 'Ujikom saved successfully');
-
-        // Redirect to the ujikom.show route (adjust with appropriate ID or parameter)
-        return redirect()->route('ujikom.show');
-    } catch (\Exception $e) {
-        // Show error notification using SweetAlert
-        Alert::error('Error', 'Failed to save Ujikom: ' . $e->getMessage());
-
-        // Redirect back to the previous page with input
-        return redirect()->back()->withInput();
     }
-}
+
+    public function destroy($id)
+    {
+        try {
+            $ujikom = Ujikom::findOrFail($id);
+            $ujikom->delete();
+
+            Alert::success('Success', 'Ujikom deleted successfully');
+            return redirect()->route('ujikom.show');
+        } catch (\Exception $e) {
+            Alert::error('Error', 'Failed to delete Ujikom: ' . $e->getMessage());
+            return redirect()->back();
+        }
+    }
 }

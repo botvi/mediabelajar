@@ -5,7 +5,9 @@ use App\Http\Controllers\{
     DashboardController,
     WebsiteController,
     UjikomController,
-    TebakGambarController
+    TebakGambarController,
+    RegisterController,
+    LoginController
 };
 /*
 |--------------------------------------------------------------------------
@@ -23,24 +25,41 @@ Route::get('/music-frame', function () {
     return view('music-frame');
 });
 
+// AUTH
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// ADMIN
-Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register'])->name('register.post');
+// AUTH
 
-// UJIKOM
-Route::get('/ujikompetensi', [UjikomController::class, 'show'])->name('ujikom.show');
-Route::get('/getujikom', [UjikomController::class, 'index']);
-Route::get('/ujikompetensi/create', [UjikomController::class, 'create'])->name('ujikom.create');
-Route::post('/ujikom', [UjikomController::class, 'store'])->name('ujikom.store');
-// UJIKOM
-// TEBAKGAMBAR
-Route::get('/tebakgambar/create', [TebakGambarController::class, 'create'])->name('tebakgambar.create');
-Route::post('/tebakgambar', [TebakGambarController::class, 'store'])->name('tebakgambar.store');
-// TEBAKGAMBAR
-// ADMIN
+// ADMIN routes
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+    
+    // UJIKOM
+    Route::get('/ujikompetensi', [UjikomController::class, 'show'])->name('ujikom.show');
+    Route::get('/getujikom', [UjikomController::class, 'index']);
+    Route::get('/ujikompetensi/create', [UjikomController::class, 'create'])->name('ujikom.create');
+    Route::post('/ujikom', [UjikomController::class, 'store'])->name('ujikom.store');
+    Route::get('/ujikom/{id}/edit', [UjikomController::class, 'edit'])->name('ujikom.edit');
+    Route::put('/ujikom/{id}', [UjikomController::class, 'update'])->name('ujikom.update');
+    Route::delete('/ujikom/{id}', [UjikomController::class, 'destroy'])->name('ujikom.destroy');
+    
+    // TEBAKGAMBAR
+    Route::get('/tebak-gambar', [TebakGambarController::class, 'show'])->name('tebakgambar.show');
+    Route::get('/gettebakgambar', [TebakGambarController::class, 'getTebakGambar']);
+    Route::get('/tebakgambar/create', [TebakGambarController::class, 'create'])->name('tebakgambar.create');
+    Route::post('/tebak-gambar/store', [TebakGambarController::class, 'store'])->name('tebak-gambar.store');
+    Route::get('/tebakgambar/{id}/edit', [TebakGambarController::class, 'edit']);
+    Route::put('/tebakgambar/{id}', [TebakGambarController::class, 'update']);
+    Route::delete('/tebakgambar/{id}', [TebakGambarController::class, 'destroy'])->name('tebakgambar.destroy');
+});
+// ADMIN routes
 
 // WEBSITE
-Route::get('/', [WebsiteController::class, 'menu']);
+Route::get('/', [WebsiteController::class, 'menu'])->name('home');
 Route::get('/belajar', [WebsiteController::class, 'belajar']);
 
 Route::get('/rotasibumi', [WebsiteController::class, 'rotasibumi']);

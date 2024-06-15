@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('tebak_gambars', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('answer');
-            $table->text('clue');
+            $table->string('gambar');
+            $table->string('jawaban');
+            $table->string('petunjuk');
             $table->timestamps();
         });
     }

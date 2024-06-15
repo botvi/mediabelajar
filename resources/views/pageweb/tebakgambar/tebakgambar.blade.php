@@ -129,30 +129,34 @@
 
     <script>
         $(document).ready(function() {
-            const images = [{
-                    image: '{{ asset('web') }}/assets/planet/jupiter.png',
-                    answer: 'Jawaban1',
-                    clue: 'Ini adalah planet terbesar di tata surya kita.'
+            let images = [];
+
+            // Fetch data from the API
+            $.ajax({
+                url: '/gettebakgambar', // Update with your actual API endpoint
+                method: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    images = response.images.map(item => ({
+                        gambar: item.gambar,
+                        jawaban: item.jawaban,
+                        petunjuk: item.petunjuk
+                    }));
+                    showImage(currentImageIndex);
+                },
+                error: function(error) {
+                    console.error('Error fetching data:', error);
                 }
-                // {
-                //     image: '{{ asset('web') }}/assets/planet/saturnus.png',
-                //     answer: 'Jawaban2',
-                //     clue: 'Ini adalah planet dengan cincin yang terkenal.'
-                // },
-                // {
-                //     image: '{{ asset('web') }}/assets/planet/uranus.png',
-                //     answer: 'Jawaban3',
-                //     clue: 'Ini adalah planet yang dikenal dengan warna birunya.'
-                // }
-            ];
+            });
 
             let currentImageIndex = 0;
             let startTime = null; // Waktu mulai
             let totalDuration = 0; // Durasi total
 
             function showImage(index) {
-                $('#game-image').attr('src', images[index].image);
-                $('#clue-text').text(images[index].clue);
+                if (images.length === 0) return; // Wait until images are loaded
+                $('#game-image').attr('src', images[index].gambar);
+                $('#clue-text').text(images[index].petunjuk);
                 startTime = new Date(); // Mulai waktu ketika menampilkan gambar
             }
 
@@ -168,7 +172,7 @@
 
             function checkAnswer() {
                 const userAnswer = $('#answer').val().trim().toLowerCase();
-                const correctAnswer = images[currentImageIndex].answer.toLowerCase();
+                const correctAnswer = images[currentImageIndex].jawaban.toLowerCase();
                 if (userAnswer === correctAnswer) {
                     const endTime = new Date(); // Waktu selesai ketika jawaban benar
                     const durationInSeconds = (endTime - startTime) / 1000; // Durasi dalam detik
@@ -204,9 +208,13 @@
                 checkAnswer();
             });
 
-            showImage(currentImageIndex);
+            // Initial call to show the first image
+            if (images.length > 0) {
+                showImage(currentImageIndex);
+            }
         });
     </script>
+
     <script src="{{ asset('web') }}/assets/js/loading.js"></script>
 </body>
 

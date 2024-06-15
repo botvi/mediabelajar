@@ -2,60 +2,64 @@
 
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Uji Kompetensi</h4>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Tebak Gambar</h4>
 
         <div class="mb-3">
-            <a href="{{ route('ujikom.create') }}" class="btn btn-sm btn-primary">Tambah Soal</a>
+            <a href="/tebakgambar/create" class="btn btn-sm btn-primary">Tambah Soal</a>
         </div>
 
         <div class="card">
-            <h5 class="card-header">Uji Kompetensi</h5>
+            <h5 class="card-header">Tebak Gambar</h5>
             <div class="table-responsive text-nowrap p-4">
                 <table id="example" class="display compact nowrap" style="width:100%">
                     <thead>
                         <tr>
-                            <th>PERTANYAAN DAN JAWABAN</th>
+                            <th>GAMBAR</th>
+                            <th>PETUNJUK</th>
+                            <th>JAWABAN</th>
                             <th>AKSI</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        @foreach ($ujiKoms as $index => $ujikom)
+                        @foreach ($tebakgambar as $index => $tebakgambar)
                             <tr>
                                 <td>
-                                    <div class="card accordion-item">
-                                        <h2 class="accordion-header" id="heading{{ $index }}">
-                                            <button type="button" class="accordion-button collapsed"
-                                                data-bs-toggle="collapse" data-bs-target="#accordion{{ $index }}"
-                                                aria-expanded="false" aria-controls="accordion{{ $index }}">
-                                                {{ $ujikom->question }}
-                                            </button>
-                                        </h2>
-                                        <div id="accordion{{ $index }}" class="accordion-collapse collapse"
-                                            aria-labelledby="heading{{ $index }}" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                @foreach ($ujikom->answers as $answer)
-                                                    <li>
-                                                        <span style="color: {{ $answer['correct'] ? 'green' : 'red' }}">
-                                                            {{ $answer['text'] }}
-                                                        </span>
-                                                        @if ($answer['correct'])
-                                                            <span class="badge bg-success"></span>
-                                                        @endif
-                                                    </li>
-                                                @endforeach
+                                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modalCenter{{ $index }}">
+                                        Lihat Gambar
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modalCenter{{ $index }}" tabindex="-1"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalCenterTitle">
+                                                        {{ $tebakgambar->jawaban }}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img alt="{{ $tebakgambar->jawaban }}" class="img-fluid"
+                                                        src="{{ asset($tebakgambar->gambar) }}">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
+                                <td>{{ $tebakgambar->petunjuk }}</td>
+                                <td>{{ $tebakgambar->jawaban }}</td>
                                 <td>
-                                    <a href="{{ route('ujikom.edit', $ujikom->id) }}"
-                                        class="btn btn-warning btn-sm">Edit</a>
-                                    <form action="{{ route('ujikom.destroy', $ujikom->id) }}" method="POST"
+                                    <a href="/tebakgambar/{{ $tebakgambar->id }}/edit"
+                                        class="btn btn-sm btn-warning">Edit</a>
+                                    <form action="{{ route('tebakgambar.destroy', $tebakgambar->id) }}" method="POST"
                                         class="d-inline delete-form">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                     </form>
+
                                 </td>
                             </tr>
                         @endforeach
@@ -65,7 +69,6 @@
         </div>
     </div>
 @endsection
-
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>

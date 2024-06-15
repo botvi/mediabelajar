@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TebakGambar extends Model
 {
     use HasFactory;
-    protected $fillable = ['image', 'answer','clue'];
+    protected $fillable = ['gambar', 'jawaban','petunjuk'];
+
 }

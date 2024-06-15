@@ -18,17 +18,10 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        // Check if the user is authenticated
-        if (!Auth::check()) {
-            return response()->json(['message' => 'Unauthorized'], 401);
+        if (Auth::check() && Auth::user()->role === $role) {
+            return $next($request);
         }
 
-        // Check the user's role
-        $user = Auth::user();
-        if ($user->role !== $role) {
-            return response()->json(['message' => 'Forbidden'], 403);
-        }
-
-        return $next($request);
+        return redirect('/');
     }
 }
