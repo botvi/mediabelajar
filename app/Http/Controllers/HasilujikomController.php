@@ -8,40 +8,48 @@ use Illuminate\Support\Facades\Auth;
 
 class HasilujikomController extends Controller
 {
-    /**
-     * Save the quiz score into the database.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function saveScore(Request $request)
+    public function store(Request $request)
     {
-        // Validate the request
+        // Validate the incoming request
         $request->validate([
-            'score' => 'required|integer',
-        ], [
-            'score.required' => 'The score field is required.',
-            'score.integer' => 'The score must be an integer.',
+            'score' => 'required|integer|min:0|max:100',
         ]);
 
-        try {
-            // Save the score to the database
-            $quizResult = new Hasilujikom();
-            $quizResult->user_id = Auth::id(); // Adjust how you save user_id based on your authentication method
-            $quizResult->score = $request->score;
-            $quizResult->save();
+        // Get the logged-in user
+        $user = Auth::user();
 
-            // Return JSON response on success
-            return response()->json([
-                'message' => 'Score saved successfully',
-                'score' => $quizResult->score,
+        // Find existing score for the user
+        $existingScore = Hasilujikom::where('user_id', $user->id)->first();
+
+        if ($existingScore) {
+            // Update the score if the new score is higher
+            if ($request->score > $existingScore->score) {
+                $existingScore->update(['score' => $request->score]);
+            }
+        } else {
+            // Create a new score record if none exists
+            Hasilujikom::create([
+                'user_id' => $user->id,
+                'score' => $request->score,
             ]);
-        } catch (\Exception $e) {
-            // Handle and log any exceptions
-            return response()->json([
-                'message' => 'Failed to save score.',
-                'error' => $e->getMessage(),
-            ], 500);
         }
+
+        return response()->json(['message' => 'Score saved successfully']);
+    }
+
+    public function leaderboard()
+    {
+        // Fetch all scores along with user names
+        $allScores = Hasilujikom::with('user')
+            ->orderBy('score', 'desc')
+            ->get()
+            ->map(function ($hasilujikom) {
+                return [
+                    'nama' => $hasilujikom->user->nama,
+                    'score' => $hasilujikom->score,
+                ];
+            });
+
+        return view('pageweb.ujikom.leaderboard', ['allScores' => $allScores]);
     }
 }

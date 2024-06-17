@@ -24,12 +24,10 @@
     <div class="app container">
         <div class="row align-items-center">
             <div class="col">
-                <h1 class="mb-4">Uji Kompetensi <span class="infotitle" href="#" data-bs-toggle="modal"
-                        data-bs-target="#infoModal"><img src="{{ asset('web') }}/assets/btn/about.png" width="25px"
-                            alt=""></span></h1>
+                <h1 class="mb-4">Uji Kompetensi</h1>
             </div>
             <div class="col-auto">
-                <a href="/" class="link-page back-btn"><img src="{{ asset('web') }}/assets/btn/close_2.png"
+                <a href="/ujikom" class="link-page back-btn"><img src="{{ asset('web') }}/assets/btn/close_2.png"
                         width="60" height="auto" /></a>
             </div>
         </div>
@@ -143,7 +141,7 @@
         function selectAnswer(button, isCorrect) {
             if (isCorrect) {
                 button.classList.add("correct");
-                score++;
+                score += 100 / questions.length;
             } else {
                 button.classList.add("incorrect");
             }
@@ -153,8 +151,27 @@
             nextBtnEL.style.visibility = "visible";
         }
 
-        function showScore() {
+        async function showScore() {
             resetState();
+
+            // Send score to the backend
+            const finalScore = Math.round(score);
+            try {
+                const response = await fetch('/save-score', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}' // Include CSRF token for security
+                    },
+                    body: JSON.stringify({ score: finalScore })
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to save score');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to save score. Please try again later.');
+            }
 
             // Create card elements
             const card = document.createElement('div');
@@ -166,11 +183,11 @@
 
             const cardTitle = document.createElement('h5');
             cardTitle.className = 'card-title text-light';
-            cardTitle.innerHTML = 'Quiz Completed!';
+            cardTitle.innerHTML = 'Uji Kompetensi selesai!';
 
             const cardText = document.createElement('p');
             cardText.className = 'card-text text-light';
-            cardText.innerHTML = `You scored ${score} out of ${questions.length}!`;
+            cardText.innerHTML = `Score kamu ${finalScore} dari 100!`;
 
             // Append elements to build the card
             cardBody.appendChild(cardTitle);

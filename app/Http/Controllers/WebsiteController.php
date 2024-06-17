@@ -46,6 +46,12 @@ class WebsiteController extends Controller
     public function ujikom(){
         return view('pageweb.ujikom.ujikom');
     }
+    public function showujikom(){
+        return view('pageweb.ujikom.show');
+    }
+    public function showleaderboard(){
+        return view('pageweb.ujikom.leaderboard');
+    }
     // ujikom
     
     // tebakgambar

@@ -189,6 +189,7 @@
                         $('#guess-card').hide(); // Sembunyikan card tebak gambar
                         $('.result-card').show(); // Tampilkan card hasil akhir
                         $('#final-result').text(`Total waktu: ${formatTime(totalDuration)}`);
+                        saveCompletionTime(totalDuration); // Simpan waktu penyelesaian
                     } else {
                         showImage(currentImageIndex);
                     }
@@ -211,6 +212,24 @@
             // Initial call to show the first image
             if (images.length > 0) {
                 showImage(currentImageIndex);
+            }
+
+            function saveCompletionTime(time) {
+                $.ajax({
+    url: '/save-completion-time',
+    method: 'POST',
+    data: {
+        waktu: Math.round(time),
+        _token: '{{ csrf_token() }}' // Include CSRF token
+    },
+    success: function(response) {
+        console.log(response.message);
+    },
+    error: function(error) {
+        console.error('Error saving completion time:', error);
+    }
+});
+
             }
         });
     </script>

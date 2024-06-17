@@ -10,7 +10,8 @@ use App\Http\Controllers\{
     TebakGambarController,
     RegisterController,
     LoginController,
-    HasilUjikomController
+    HasilujikomController,
+    HasiltebakgambarController
 };
 
 /*
@@ -39,7 +40,7 @@ Route::post('register', [RegisterController::class, 'register'])->name('register
 // AUTH
 
 // ADMIN routes
-Route::group(['middleware' => ['role:admin,user']], function () {
+Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
     
     // UJIKOM
@@ -80,12 +81,18 @@ Route::get('/geraksemu', [WebsiteController::class, 'geraksemu']);
 
 
 // ujikom
-    Route::get('/ujikom', [WebsiteController::class, 'ujikom'])->middleware('role:admin,user');
+    Route::get('/getujikom', [UjikomController::class, 'index']);
+    Route::get('/ujikom', [WebsiteController::class, 'showujikom']);
+    Route::get('/startujikom', [WebsiteController::class, 'ujikom'])->middleware('role:admin,user');
+    Route::post('/save-score', [HasilujikomController::class, 'store']);
+    Route::get('/leaderboard', [HasilujikomController::class, 'leaderboard']);
 // ujikom
 
-// belajar
+// belajar tebak gambar
+Route::get('/gettebakgambar', [TebakGambarController::class, 'getTebakGambar']);
 Route::get('/bermain', [WebsiteController::class, 'tebakgambar']);
-// belajar
+Route::post('/save-completion-time', [HasiltebakgambarController::class, 'saveCompletionTime']);
+// belajar tebak gambar
 
 // WEBSITE
 
