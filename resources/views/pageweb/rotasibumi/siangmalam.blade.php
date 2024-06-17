@@ -56,13 +56,31 @@
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
                     </button>
                 </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
+                <div class="modal-body"><p>Siang dan malam adalah dua periode utama dalam siklus harian Bumi yang disebabkan oleh rotasi Bumi terhadap sumbunya.</p>
+
+                    <h2>Penyebab Siang dan Malam</h2>
+                    <ul>
+                        <li><strong>Rotasi Bumi:</strong> Bumi berputar mengelilingi sumbunya dalam waktu sekitar 24 jam.</li>
+                        <li><strong>Perbedaan Pencahayaan:</strong> Selama rotasi, Bumi menghadap Matahari dan mengalami siang ketika terkena sinar Matahari secara langsung.</li>
+                        <li><strong>Bola Bumi:</strong> Bola Bumi memungkinkan hanya separuhnya yang diterangi oleh Matahari pada satu waktu, sementara yang lainnya dalam kegelapan relatif.</li>
+                    </ul>
+                    
+                    <h2>Perbedaan Antara Siang dan Malam</h2>
+                    <ul>
+                        <li><strong>Siang:</strong> Waktu ketika bagian Bumi menghadap Matahari dan menerima cahayanya secara langsung.</li>
+                        <li><strong>Malan:</strong> Waktu ketika bagian Bumi menghadap jauh dari Matahari dan berada dalam kegelapan.</li>
+                    </ul>
+                    
+                    <h2>Pengaruh Siang dan Malam</h2>
+                    <p>Periode siang dan malam mempengaruhi berbagai aspek kehidupan di Bumi:</p>
+                    <ul>
+                        <li><strong>Pertumbuhan Tanaman:</strong> Tanaman memerlukan sinar Matahari untuk fotosintesis, yang terjadi selama siang hari.</li>
+                        <li><strong>Perilaku Hewan:</strong> Banyak hewan aktif selama siang hari (hewan diurnal) atau malam hari (hewan nokturnal).</li>
+                        <li><strong>Aktivitas Manusia:</strong> Manusia beraktivitas dan beristirahat sesuai dengan siklus siang dan malam.</li>
+                    </ul>
+                    
+                    <h2>Kesimpulan</h2>
+                    <p>Siang dan malam adalah bagian alami dari siklus hidup Bumi yang diatur oleh rotasi Bumi terhadap Matahari. Pengetahuan tentang siang dan malam membantu kita dalam berbagai aspek kehidupan sehari-hari, termasuk pertanian, perilaku hewan, dan aktivitas manusia.</p>
                 </div>
             </div>
         </div>

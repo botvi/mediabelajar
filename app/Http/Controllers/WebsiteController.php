@@ -40,6 +40,9 @@ class WebsiteController extends Controller
     public function rasibintang(){
         return view('pageweb.revolusibumi.rasibintang');
     }
+    public function geraksemu(){
+        return view('pageweb.revolusibumi.geraksemu');
+    }
 
 
     // ujikom

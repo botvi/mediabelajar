@@ -1,32 +1,96 @@
 @extends('template-admin.layout')
+@section('style')
+<style>
+    .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+    }
 
+    .table th,
+    .table td {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .table thead th {
+        vertical-align: middle; /* mengatur posisi vertikal teks di header */
+        border-bottom: 2px solid #dee2e6;
+        color: #fff; /* warna teks header */
+    }
+
+    .table tbody + tbody {
+        border-top: 2px solid #dee2e6;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.075);
+    }
+
+    .table-bordered {
+        border: 1px solid #dee2e6;
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6;
+    }
+
+    .table-dark {
+        color: #fff;
+        background-color: #343a40; /* warna latar header */
+    }
+
+    .table-dark th,
+    .table-dark td,
+    .table-dark thead th {
+        border-color: #454d55;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    img.gold-medal {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+</style>
+
+@endsection
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Score Tebak Gambar</h4>
 
         <div class="card">
             <h5 class="card-header">Score Tebak Gambar</h5>
-            <div class="table-responsive text-nowrap p-4">
-                <table id="example" class="display compact nowrap" style="width:100%">
-                    <thead>
+            <div class="table-responsive p-4">
+                <table id="example" class="table table-striped table-bordered table-hover" style="width:100%">
+                    <thead class="table-dark">
                         <tr>
+                            <th class="text-center">#</th>
                             <th>NAMA</th>
-                            <th>SCORE</th>
+                            <th class="text-center">WAKTU (detik)</th>
                         </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0">
+                    <tbody>
                         @foreach ($allWaktu as $index => $waktu)
                         <tr>
-                               
-                            <td class="name">{{ $waktu->user->nama }}</td>
-                            <td class="points">
-                                {{ $waktu->waktu }}
+                            <td class="text-center">
                                 @if ($index == 0)
-                                    <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" height="30px" alt="gold medal"/>
+                                    <img src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" height="30px" alt="gold medal"/>
+                                @else
+                                    {{ $index + 1 }}
                                 @endif
                             </td>
-                               
-                            </tr>
+                            <td>{{ $waktu->user->nama }}</td>
+                            <td class="text-center">{{ $waktu->waktu }}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -34,4 +98,3 @@
         </div>
     </div>
 @endsection
-

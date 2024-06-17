@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Document</title>
+    <title>Uji Kompetensi</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -97,13 +97,17 @@
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
                     </button>
                 </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
+                <div class="modal-body"><h1>Penjelasan Uji Kompetensi</h1>
+
+                    <p>Uji kompetensi ini dirancang untuk:</p>
+                
+                    <ul>
+                        <li>Mengukur pemahaman siswa melalui soal pilihan ganda.</li>
+                        <li>Menyimpan nilai siswa secara otomatis di leaderboard untuk memotivasi mereka mencapai prestasi terbaik.</li>
+                        <li>Menggunakan platform online untuk kemudahan akses dan efisiensi dalam administrasi ujian.</li>
+                        <li>Memberikan insight tentang kekuatan dan kelemahan siswa dalam berbagai konsep.</li>
+                        <li>Mendukung pengembangan kurikulum dan intervensi pendidikan berdasarkan hasil evaluasi.</li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -54,13 +54,36 @@
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
                     </button>
                 </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
+                <div class="modal-body"><p>Arah angin adalah arah dari mana angin berasal. Ini biasanya dinyatakan dalam derajat dari utara sejati (misalnya, angin barat daya berasal dari 225 derajat) atau dalam nama-nama arah mata angin (misalnya, angin barat daya).</p>
+
+                    <h2>Faktor yang Mempengaruhi Arah Angin</h2>
+                    <ul>
+                        <li><strong>Tekanan Atmosfer:</strong> Angin bergerak dari daerah bertekanan tinggi ke daerah bertekanan rendah.</li>
+                        <li><strong>Rotasi Bumi:</strong> Rotasi bumi menyebabkan efek Coriolis yang mengubah arah angin.</li>
+                        <li><strong>Topografi:</strong> Pegunungan dan lembah dapat mengarahkan dan mempercepat angin.</li>
+                        <li><strong>Pemanasan Matahari:</strong> Pemanasan yang tidak merata dari permukaan bumi menyebabkan perbedaan tekanan yang memicu angin.</li>
+                    </ul>
+                    
+                    <h2>Jenis-Jenis Angin</h2>
+                    <ul>
+                        <li><strong>Angin Lokal:</strong> Angin yang terbentuk akibat perbedaan suhu lokal, seperti angin darat dan angin laut.</li>
+                        <li><strong>Angin Muson:</strong> Angin periodik yang berubah arah setiap enam bulan, membawa musim hujan dan musim kemarau di beberapa wilayah.</li>
+                        <li><strong>Angin Pasat:</strong> Angin tetap yang bertiup dari daerah subtropis bertekanan tinggi menuju khatulistiwa.</li>
+                    </ul>
+                    
+                    <h2>Pengukuran Arah Angin</h2>
+                    <p>Arah angin diukur menggunakan alat yang disebut anemometer dan wind vane (penunjuk arah angin). Anemometer mengukur kecepatan angin, sedangkan wind vane menunjukkan arah dari mana angin bertiup.</p>
+                    
+                    <h2>Pentingnya Mengetahui Arah Angin</h2>
+                    <ul>
+                        <li><strong>Pertanian:</strong> Membantu petani menentukan waktu yang tepat untuk menanam dan menghindari penyebaran hama.</li>
+                        <li><strong>Penerbangan:</strong> Pilot perlu mengetahui arah angin untuk lepas landas dan mendarat dengan aman.</li>
+                        <li><strong>Maritim:</strong> Kapal menggunakan arah angin untuk navigasi.</li>
+                        <li><strong>Kesehatan:</strong> Memantau arah angin penting untuk memahami penyebaran polutan udara dan penyakit.</li>
+                    </ul>
+                    
+                    <h2>Kesimpulan</h2>
+                    <p>Memahami arah angin dan faktor-faktor yang mempengaruhinya sangat penting untuk berbagai bidang, termasuk pertanian, penerbangan, maritim, dan kesehatan. Arah angin yang tepat dapat membantu kita merencanakan dan mengambil keputusan yang lebih baik dalam aktivitas sehari-hari.</p>
                 </div>
             </div>
         </div>

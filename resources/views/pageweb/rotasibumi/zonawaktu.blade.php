@@ -69,13 +69,70 @@
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
                     </button>
                 </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
+                <div class="modal-body"> <h1>Konversi Waktu GMT ke Waktu Indonesia</h1>
+    
+                    <h2>Penjelasan Zona Waktu</h2>
+                    <p>Zona waktu adalah pembagian wilayah di permukaan Bumi yang memiliki waktu standar yang sama. Pembagian ini dibuat untuk menyesuaikan waktu dengan posisi Matahari di langit, sehingga aktivitas manusia dapat berjalan dengan lebih teratur dan efisien. Dunia dibagi menjadi 24 zona waktu, masing-masing berbeda satu jam dari GMT (Greenwich Mean Time). Di Indonesia, terdapat tiga zona waktu utama:</p>
+                    
+                    <h2>Zona Waktu di Indonesia</h2>
+                    <table>
+                        <tr>
+                            <th>Zona Waktu</th>
+                            <th>GMT</th>
+                            <th>Wilayah</th>
+                            <th>Contoh Kota</th>
+                            <th>Contoh Penggunaan GMT</th>
+                        </tr>
+                        <tr>
+                            <td>Waktu Indonesia Barat (WIB)</td>
+                            <td>GMT+7</td>
+                            <td>Sumatera, Jawa, Kalimantan Barat</td>
+                            <td>Jakarta, Bandung, Medan</td>
+                            <td>Jika waktu di Jakarta 14:00 WIB, maka waktu di Greenwich 07:00 GMT</td>
+                        </tr>
+                        <tr>
+                            <td>Waktu Indonesia Tengah (WITA)</td>
+                            <td>GMT+8</td>
+                            <td>Kalimantan Tengah, Kalimantan Selatan, Bali, Nusa Tenggara Barat, Nusa Tenggara Timur</td>
+                            <td>Denpasar, Makassar, Mataram</td>
+                            <td>Jika waktu di Denpasar 14:00 WITA, maka waktu di Greenwich 06:00 GMT</td>
+                        </tr>
+                        <tr>
+                            <td>Waktu Indonesia Timur (WIT)</td>
+                            <td>GMT+9</td>
+                            <td>Maluku, Papua</td>
+                            <td>Jayapura, Ambon, Sorong</td>
+                            <td>Jika waktu di Jayapura 14:00 WIT, maka waktu di Greenwich 05:00 GMT</td>
+                        </tr>
+                    </table>
+                    
+                    <h2>Contoh Pengaplikasian GMT di Indonesia</h2>
+                    <p>Misalkan ada rapat internasional yang dijadwalkan pada 12:00 GMT:</p>
+                    <table>
+                        <tr>
+                            <th>Kota</th>
+                            <th>Zona Waktu</th>
+                            <th>Waktu Rapat</th>
+                        </tr>
+                        <tr>
+                            <td>Jakarta</td>
+                            <td>WIB (GMT+7)</td>
+                            <td>19:00 WIB</td>
+                        </tr>
+                        <tr>
+                            <td>Denpasar</td>
+                            <td>WITA (GMT+8)</td>
+                            <td>20:00 WITA</td>
+                        </tr>
+                        <tr>
+                            <td>Jayapura</td>
+                            <td>WIT (GMT+9)</td>
+                            <td>21:00 WIT</td>
+                        </tr>
+                    </table>
+                    
+                    <h2>Kesimpulan</h2>
+                    <p>Dengan mengetahui perbedaan waktu antara GMT dan zona waktu di Indonesia (WIB, WITA, dan WIT), kita dapat dengan mudah mengatur dan mengoordinasikan berbagai kegiatan internasional.</p>
                 </div>
             </div>
         </div>

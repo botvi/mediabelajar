@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Document</title>
+    <title>Tebak Gambar</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -90,13 +90,19 @@
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
                     </button>
                 </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
+                <div class="modal-body"> <h1>Penjelasan Permainan Tebak Gambar</h1>
+
+                    <p>Permainan tebak gambar ini adalah:</p>
+                
+                    <ul>
+                        <li>Objektif: Menebak identitas gambar yang ditampilkan dengan secepat mungkin.</li>
+                        <li>Skor: Diukur berdasarkan waktu yang dibutuhkan untuk menebak gambar dengan benar.</li>
+                        <li>Waktu Penyelesaian: Semakin cepat menjawab, semakin tinggi skor yang dicapai.</li>
+                    </ul>
+                
+                    <p>Permainan ini dirancang untuk menguji ketajaman pemikiran cepat dan pengenalan objek, serta memotivasi pemain untuk mencapai waktu penyelesaian yang lebih baik.</p>
+                
+                    <p>Menyenangkan dan menantang, permainan tebak gambar juga sering digunakan sebagai sarana hiburan edukatif.</p>
                 </div>
             </div>
         </div>

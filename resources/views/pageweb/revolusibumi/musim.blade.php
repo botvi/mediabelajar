@@ -54,13 +54,34 @@
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
                     </button>
                 </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
+                <div class="modal-body"><p>Musim adalah periode tertentu dalam setahun yang ditandai oleh kondisi cuaca dan iklim yang khas, seperti suhu udara, curah hujan, dan durasi siang dan malam.</p>
+
+                    <h2>Faktor yang Mempengaruhi Musim</h2>
+                    <ul>
+                        <li><strong>Rotasi Bumi:</strong> Rotasi Bumi menghasilkan siklus harian dan tahunan yang mempengaruhi musim.</li>
+                        <li><strong>Aksis Bumi:</strong> Kemiringan sumbu Bumi menyebabkan perbedaan intensitas sinar Matahari yang mencapai permukaan Bumi selama setahun.</li>
+                        <li><strong>Orbit Bumi:</strong> Orbit elips Bumi mengakibatkan perubahan jarak Bumi dari Matahari, meskipun bukan faktor utama dalam musim.</li>
+                    </ul>
+                    
+                    <h2>Jenis Musim</h2>
+                    <p>Ada empat musim utama yang umum di sebagian besar wilayah Bumi:</p>
+                    <ul>
+                        <li><strong>Musim Semi:</strong> Ditandai dengan cuaca yang mulai hangat setelah musim dingin, tanaman mulai bersemi kembali.</li>
+                        <li><strong>Musim Panas:</strong> Musim dengan suhu yang paling panas, biasanya diikuti dengan cuaca cerah dan lebih sedikit hujan.</li>
+                        <li><strong>Musim Gugur:</strong> Warna-warni daun berubah saat pohon menggugurkan daunnya, cuaca menjadi lebih sejuk.</li>
+                        <li><strong>Musim Dingin:</strong> Musim dengan suhu terdingin, biasanya disertai salju di daerah beriklim sedang hingga dingin.</li>
+                    </ul>
+                    
+                    <h2>Pengaruh Musim</h2>
+                    <p>Musim mempengaruhi berbagai aspek kehidupan di Bumi:</p>
+                    <ul>
+                        <li><strong>Pertanian:</strong> Musim memengaruhi masa tanam dan panen tanaman.</li>
+                        <li><strong>Perilaku Hewan:</strong> Migrasi dan reproduksi hewan sering kali terjadi pada musim tertentu.</li>
+                        <li><strong>Kehidupan Sehari-hari:</strong> Aktivitas manusia, pakaian, dan kebutuhan energi sering disesuaikan dengan musim.</li>
+                    </ul>
+                    
+                    <h2>Kesimpulan</h2>
+                    <p>Musim adalah hasil dari interaksi kompleks antara rotasi Bumi, kemiringan sumbu Bumi, dan orbit Bumi mengelilingi Matahari. Memahami musim membantu kita merencanakan kegiatan dan mengadaptasi diri terhadap perubahan iklim secara efektif.</p>
                 </div>
             </div>
         </div>

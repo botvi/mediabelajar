@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Login Media Belajar - Tata Surya</title>
 
     <meta name="description" content="" />
 
@@ -131,12 +131,12 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+                  <span class="app-brand-text demo text-body fw-bolder">Login</span>
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to Sneat! 👋</h4>
-              <p class="mb-4">Please sign-in to your account and start the adventure</p>
+              <h4 class="mb-2">Selamat datang di media pembelajaran! 👋</h4>
+              <p class="mb-4">Bergabung sekarang untuk mengakses semua fitur media</p>
 
               <form id="formAuthentication" class="mb-3"action="{{ route('login') }}" method="POST">
                 @csrf
@@ -192,16 +192,7 @@
       </div>
     </div>
 
-    <!-- / Content -->
-
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
+   
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

@@ -24,10 +24,9 @@
             </a>
             <div class="navbar-brand text-start col">
                 <div class="text-light">
-                    <h2><span style="color: rgb(246, 172, 26);">Bermain
-                        </span> <span class="infotitle" href="#" data-bs-toggle="modal"
-                            data-bs-target="#infoModal"><img src="{{ asset('web') }}/assets/btn/about.png"
-                                width="25px" alt=""></span>
+                    <h2>
+                        <span style="color: #ffffff;">Tebak</span> <span style="color: rgb(246, 172, 26);">Gambar
+                        </span>
                     </h2>
                 </div>
             </div>

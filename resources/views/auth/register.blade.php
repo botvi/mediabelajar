@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Register - Sneat</title>
+    <title>Register -  Media Belajar - Tata Surya</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('admin') }}/assets/img/favicon/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,11 +35,11 @@
                                 <span class="app-brand-logo demo">
                                     <!-- Logo SVG omitted for brevity -->
                                 </span>
-                                <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+                                <span class="app-brand-text demo text-body fw-bolder">Register</span>
                             </a>
                         </div>
-                        <h4 class="mb-2">Adventure starts here 🚀</h4>
-                        <p class="mb-4">Make your app management easy and fun!</p>
+                        <h4 class="mb-2">Petualangan mulai dari sini 🚀</h4>
+                        <p class="mb-4">Buat belajarmu menjadi Menyenangkan</p>
 
                         <form id="formAuthentication" class="mb-3" action="{{ route('register.post') }}"
                             method="POST">

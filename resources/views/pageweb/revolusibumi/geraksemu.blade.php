@@ -54,13 +54,36 @@
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
                     </button>
                 </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
+                <div class="modal-body"><p>Gerak semu adalah ilusi gerakan yang tampak dari Bumi karena pergerakan Bumi sendiri.</p>
+
+                    <h2>Faktor Penyebab Gerak Semu</h2>
+                    <p>Beberapa faktor yang menyebabkan gerak semu meliputi:</p>
+                    <ul>
+                        <li><strong>Rotasi Bumi:</strong> Rotasi Bumi menyebabkan matahari terbit dan tenggelam setiap hari, menciptakan sensasi gerakan Matahari di langit.</li>
+                        <li><strong>Revolusi Bumi:</strong> Revolusi Bumi mengakibatkan perubahan posisi Matahari terhadap latar belakang bintang-bintang di langit, menciptakan gerakan semu matahari di sepanjang tahun.</li>
+                        <li><strong>Rotasi Bulan:</strong> Rotasi Bulan menghasilkan gerakan Bulan di langit, seperti fase bulan dan gerakan Bulan di sepanjang malam.</li>
+                        <li><strong>Pergerakan planet:</strong> Pergerakan planet di langit juga terlihat bergerak dalam posisi relatif terhadap bintang-bintang di latar belakang.</li>
+                    </ul>
+                    
+                    <h2>Contoh Gerak Semu</h2>
+                    <p>Contoh gerak semu meliputi:</p>
+                    <ul>
+                        <li><strong>Gerak harian Matahari:</strong> Terbit di timur dan tenggelam di barat karena rotasi Bumi.</li>
+                        <li><strong>Perubahan posisi Matahari selama setahun:</strong> Gerak Matahari melalui 12 rasi zodiak karena revolusi Bumi mengelilingi Matahari.</li>
+                        <li><strong>Fase Bulan:</strong> Gerakan Bulan mengelilingi Bumi dan fase bulan yang berubah.</li>
+                        <li><strong>Pergerakan planet:</strong> Gerakan planet di langit yang berbeda-beda dari Bumi.</li>
+                    </ul>
+                    
+                    <h2>Pengaruh Gerak Semu</h2>
+                    <p>Pengetahuan tentang gerak semu penting dalam:</p>
+                    <ul>
+                        <li><strong>Navigasi:</strong> Membantu navigasi di darat dan laut dengan menggunakan bintang sebagai panduan.</li>
+                        <li><strong>Astronomi:</strong> Memahami gerak semu membantu astronom untuk mengamati dan memprediksi pergerakan objek langit.</li>
+                        <li><strong>Kalender:</strong> Menentukan waktu dan musim berdasarkan gerak semu Matahari dan Bulan.</li>
+                    </ul>
+                    
+                    <h2>Kesimpulan</h2>
+                    <p>Gerak semu adalah ilusi gerakan yang tampak dari Bumi akibat pergerakan Bumi sendiri dalam rotasi dan revolusinya. Pengetahuan tentang gerak semu penting dalam navigasi, astronomi, dan penentuan waktu dalam kehidupan sehari-hari.</p>
                 </div>
             </div>
         </div>

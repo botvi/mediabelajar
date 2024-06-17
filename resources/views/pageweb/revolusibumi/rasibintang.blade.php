@@ -54,13 +54,28 @@
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
                     </button>
                 </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
+                <div class="modal-body"><p>Rasi bintang adalah pola-pola bintang yang membentuk gambar atau figur tertentu di langit. Rasi bintang digunakan untuk membantu navigasi dan identifikasi bintang-bintang di langit.</p>
+
+                    <h2>Penyusunan Rasi Bintang</h2>
+                    <p>Rasi bintang tidak memiliki hubungan fisik yang nyata dengan bintang-bintang yang membentuknya. Mereka hanyalah pola yang terlihat ketika garis-garis imajiner ditarik antara bintang-bintang yang tampak berdekatan di langit.</p>
+                    
+                    <h2>Jenis-Jenis Rasi Bintang</h2>
+                    <p>Ada dua jenis rasi bintang utama:</p>
+                    <ul>
+                        <li><strong>Rasi Bintang Menurut Persegi Tiga:</strong> Rasi bintang tradisional yang memiliki bentuk figur, misalnya Orion dan Leo.</li>
+                        <li><strong>Rasi Bintang Modern:</strong> Rasi bintang yang dibentuk berdasarkan garis-garis imajiner yang menghubungkan bintang-bintang untuk membentuk pola tertentu.</li>
+                    </ul>
+                    
+                    <h2>Penggunaan Rasi Bintang</h2>
+                    <p>Rasi bintang memiliki berbagai kegunaan:</p>
+                    <ul>
+                        <li><strong>Navigasi:</strong> Rasi bintang digunakan sebagai panduan navigasi, terutama sebelum era GPS.</li>
+                        <li><strong>Kalender:</strong> Beberapa budaya menggunakan gerak bintang-bintang dan rasi bintang untuk menentukan musim tanam atau perayaan budaya.</li>
+                        <li><strong>Astronomi:</strong> Rasi bintang membantu astronom dalam mengidentifikasi dan mengamati benda langit tertentu.</li>
+                    </ul>
+                    
+                    <h2>Kesimpulan</h2>
+                    <p>Rasi bintang adalah pola-pola bintang yang membentuk gambar atau figur di langit. Mereka membantu dalam navigasi, kalender budaya, dan astronomi, serta menjadi bagian dari warisan budaya dan pengetahuan manusia tentang langit dan alam semesta.</p>
                 </div>
             </div>
         </div>
