@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand link-page" href="/">
+            <a class="navbar-brand link-page" href="/bermain">
                 <img src="{{ asset('web') }}/assets/btn/back.png" width="60" height="auto" />
             </a>
             <div class="navbar-brand text-start col">
@@ -35,30 +35,7 @@
         </div>
     </nav>
 
-    <!-- INFO -->
-    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <!-- Add the modal-dialog-centered class to vertically center the modal and modal-lg for large screens -->
-            <div class="modal-content">
-                <div class="modal-header bg-warning">
-                    <h5 class="modal-title" id="aboutModalLabel"><span style="color: #ffffff;">Tebak Gambar </span>
-                    </h5>
-                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
-                        <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
-                    </button>
-                </div>
-                <div class="modal-body">Tata surya adalah susunan benda-benda lagit yang terdiri atas matahari sebagai
-                    pusat tata surya, planet-planet, komet, meteoroid, dan asteroid yang mengelilingi matahari. Planet
-                    yang dekat dengan matahari bergerak lebih cepat daripada planet yang jauh dari Matahari.
-                    <br><br>
-                    Bidang edar planet-planet dalam mengelilingi matahari disebut bidang edar dan bidang edar bumi dalam
-                    mengelilingi matahari disebut bidang ekliptika. Susunan Tata Surya terdiri atas Matahari, Planet
-                    Dalam, Planet Luar, Komet, Meteorid, dan Asteroid.
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- INFO -->
+ 
 
     <div class="game-container">
         <h1 class="my-4 text-light"><span style="color: #ffffff;">Tebak</span> <span
@@ -96,7 +73,7 @@
                     <div id="final-result" class="text-center card-text"></div>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/bermain" class="btn btn-submit text-light">Play Again</a>
+                    <a href="/starttebakgambar" class="btn btn-submit text-light">Play Again</a>
                 </div>
             </div>
         </div>

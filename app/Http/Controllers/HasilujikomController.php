@@ -37,7 +37,7 @@ class HasilujikomController extends Controller
         return response()->json(['message' => 'Score saved successfully']);
     }
 
-    public function leaderboard()
+    public function leaderboardujikom()
     {
         // Fetch all scores along with user names
         $allScores = Hasilujikom::with('user')
@@ -52,4 +52,22 @@ class HasilujikomController extends Controller
 
         return view('pageweb.ujikom.leaderboard', ['allScores' => $allScores]);
     }
+
+    // ADMIN
+    public function scoreujikom()
+    {
+        // Fetch all scores along with user names
+        $allScores = Hasilujikom::with('user')
+            ->orderBy('score', 'desc')
+            ->get()
+            ->map(function ($hasilujikom) {
+                return [
+                    'nama' => $hasilujikom->user->nama,
+                    'score' => $hasilujikom->score,
+                ];
+            });
+
+        return view('page.scoreujikom.index', ['allScores' => $allScores]);
+    }
+    // ADMIN
 }

@@ -75,6 +75,18 @@
                 <div data-i18n="Analytics">Tebak Gambar</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="/scoretebakgambar" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-crown"></i>
+                <div data-i18n="Analytics">Score Tebak Gambar</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="/scoreujikom" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-crown"></i>
+                <div data-i18n="Analytics">Score Uji Kompetensi</div>
+            </a>
+        </li>
 
 
 

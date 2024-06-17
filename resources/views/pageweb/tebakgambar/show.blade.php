@@ -23,16 +23,9 @@
 .btn-mulai img:hover {
   transform: scale(1.1);
 }
-.btn-mulai img {
-  transition: transform 0.3s ease;
-}
-
-.btn-mulai img:hover {
-  transform: scale(1.1);
-}
 .bg-container {
         position: relative;
-        background-image: url('{{ asset('web') }}/assets/img/bg-ujikom.avif');
+        background-image: url('{{ asset('web') }}/assets/img/bg-tebakgambar.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -64,7 +57,7 @@
     <div class="app container bg-container">
         <div class="row align-items-center">
             <div class="col">
-                <h1 class="mb-4"><span style="color: #26355d;">UJI </span> <span style="color: rgb(246, 172, 26);">KOMPETENSI
+                <h1 class="mb-4"><span style="color: #ffffff;">TEBAK </span> <span style="color: rgb(246, 172, 26);">GAMBAR
                 </span> <span class="infotitle" href="#" data-bs-toggle="modal" data-bs-target="#infoModal">
                     <img src="{{ asset('web') }}/assets/btn/about.png" width="25px" alt=""></span>
                 </h1>
@@ -76,10 +69,10 @@
             </div>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center" style="height: 50vh;">
-            <a href="/leaderboardujikom" class="text-center link-page btn-mulai mb-3">
+            <a href="/leaderboardtebakgambar" class="text-center link-page btn-mulai mb-3">
                 <img src="{{ asset('web') }}/assets/btn/btn_leaderboard.png" class="img-fluid" width="200px" alt="Leaderboard">
             </a>
-            <a href="/startujikom" class="text-center link-page btn-mulai">
+            <a href="/starttebakgambar" class="text-center link-page btn-mulai">
                 <img src="{{ asset('web') }}/assets/btn/btn_mulai.png" class="img-fluid" width="300px" alt="Mulai">
             </a>
         </div>
@@ -91,7 +84,7 @@
             <!-- Add the modal-dialog-centered class to vertically center the modal and modal-lg for large screens -->
             <div class="modal-content">
                 <div class="modal-header bg-warning">
-                    <h5 class="modal-title" id="aboutModalLabel"><span style="color: #ffffff;">Uji Kompetensi </span>
+                    <h5 class="modal-title" id="aboutModalLabel"><span style="color: #ffffff;">Tebak gambar </span>
                     </h5>
                     <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
                         <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">

@@ -14,6 +14,21 @@
     <link rel="stylesheet" href="{{ asset('web') }}/assets/css/menu.css">
     <link rel="stylesheet" href="{{ asset('web') }}/assets/css/loading.css">
     <title>Menu</title>
+    <style>
+        @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake-hover:hover {
+    animation: shake 0.5s; /* Adjust duration as needed */
+    animation-timing-function: ease-in-out;
+}
+
+    </style>
 </head>
 
 <body>
@@ -26,28 +41,23 @@
                     id="music-off-icon" style="display: none" />
             </a>
             <audio id="background-music" src="{{ asset('web') }}/assets/musik/bg_musik.mp3" loop></audio>
-            <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">
-                <img src="{{ asset('web') }}/assets/btn/about.png" alt="About" width="60" height="auto" />
+            @auth
+            <a class="navbar-brand shake-hover text-center" href="/logout">
+                <img src="{{ asset('web') }}/assets/btn/btn-logout.png" alt="Logout" width="160" height="auto" /><br>
+                <span class="text-sm" style="color: rgb(246, 172, 26);">{{ Auth::user()->nama }}</span>
             </a>
+        @endauth
+    
+        @guest
+            <a class="navbar-brand shake-hover" href="/login">
+                <img src="{{ asset('web') }}/assets/btn/btn-login.png" alt="Login" width="160" height="auto" />
+            </a>
+        @endguest
+            
         </div>
     </nav>
 
-    <!-- INFO -->
-    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
-        <div class="modal-dialog rounded-3">
-            <div class="modal-content">
-                <div class="modal-header bg-warning">
-                    <h5 class="modal-title" id="aboutModalLabel">About</h5>
-                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
-                        <img src="{{ asset('web') }}/assets/btn/close_2.png" alt="Close button">
-                    </button>
-                </div>
-                <div class="modal-body">Some text in the Modal..</div>
-                <div class="modal-footer"></div>
-            </div>
-        </div>
-    </div>
-    <!-- INFO -->
+
 
     <div class="container">
         <div class="row">

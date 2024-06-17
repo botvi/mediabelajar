@@ -49,15 +49,21 @@ class WebsiteController extends Controller
     public function showujikom(){
         return view('pageweb.ujikom.show');
     }
-    public function showleaderboard(){
-        return view('pageweb.ujikom.leaderboard');
-    }
+    // public function showleaderboard(){
+    //     return view('pageweb.ujikom.leaderboard');
+    // }
     // ujikom
     
     // tebakgambar
     public function tebakgambar(){
         return view('pageweb.tebakgambar.tebakgambar');
     }
+    public function showtebakgambar(){
+        return view('pageweb.tebakgambar.show');
+    }
+    // public function showleaderboardtebakgambar(){
+    //     return view('pageweb.tebakgambar.leaderboard');
+    // }
     // tebakgambar
     
     public function test(){

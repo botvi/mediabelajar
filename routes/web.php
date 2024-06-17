@@ -51,6 +51,9 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/ujikom/{id}/edit', [UjikomController::class, 'edit'])->name('ujikom.edit');
     Route::put('/ujikom/{id}', [UjikomController::class, 'update'])->name('ujikom.update');
     Route::delete('/ujikom/{id}', [UjikomController::class, 'destroy'])->name('ujikom.destroy');
+    // SCOREUJIKOM
+    Route::get('/scoreujikom', [HasilujikomController::class, 'scoreujikom']);
+
     
     // TEBAKGAMBAR
     Route::get('/tebak-gambar', [TebakGambarController::class, 'show'])->name('tebakgambar.show');
@@ -60,6 +63,9 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/tebakgambar/{id}/edit', [TebakGambarController::class, 'edit']);
     Route::put('/tebakgambar/{id}', [TebakGambarController::class, 'update']);
     Route::delete('/tebakgambar/{id}', [TebakGambarController::class, 'destroy'])->name('tebakgambar.destroy');
+    // SCORETEBAKGAMBAR
+    Route::get('/scoretebakgambar', [HasiltebakgambarController::class, 'scoretebakgambar']);
+
 });
 // ADMIN routes
 
@@ -85,13 +91,16 @@ Route::get('/geraksemu', [WebsiteController::class, 'geraksemu']);
     Route::get('/ujikom', [WebsiteController::class, 'showujikom']);
     Route::get('/startujikom', [WebsiteController::class, 'ujikom'])->middleware('role:admin,user');
     Route::post('/save-score', [HasilujikomController::class, 'store']);
-    Route::get('/leaderboard', [HasilujikomController::class, 'leaderboard']);
+    Route::get('/leaderboardujikom', [HasilujikomController::class, 'leaderboardujikom']);
 // ujikom
 
 // belajar tebak gambar
 Route::get('/gettebakgambar', [TebakGambarController::class, 'getTebakGambar']);
-Route::get('/bermain', [WebsiteController::class, 'tebakgambar']);
+Route::get('/bermain', [WebsiteController::class, 'showtebakgambar']);
+Route::get('/starttebakgambar', [WebsiteController::class, 'tebakgambar'])->middleware('role:admin,user');
 Route::post('/save-completion-time', [HasiltebakgambarController::class, 'saveCompletionTime']);
+Route::get('/leaderboardtebakgambar', [HasiltebakgambarController::class, 'leaderboardtebakgambar']);
+
 // belajar tebak gambar
 
 // WEBSITE
