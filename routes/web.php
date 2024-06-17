@@ -1,14 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Http\Request;
 use App\Http\Controllers\{
     DashboardController,
     WebsiteController,
     UjikomController,
     TebakGambarController,
     RegisterController,
-    LoginController
+    LoginController,
+    HasilUjikomController
 };
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +39,7 @@ Route::post('register', [RegisterController::class, 'register'])->name('register
 // AUTH
 
 // ADMIN routes
-Route::middleware(['auth', 'role:admin'])->group(function () {
+Route::group(['middleware' => ['role:admin,user']], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
     
     // UJIKOM
@@ -76,7 +80,7 @@ Route::get('/geraksemu', [WebsiteController::class, 'geraksemu']);
 
 
 // ujikom
-Route::get('/ujikom', [WebsiteController::class, 'ujikom']);
+    Route::get('/ujikom', [WebsiteController::class, 'ujikom'])->middleware('role:admin,user');
 // ujikom
 
 // belajar
