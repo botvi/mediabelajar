@@ -57,38 +57,36 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item {{ Request::is('dashboard') ? 'active' : '' }}">
             <a href="/dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ Request::is('ujikompetensi') ? 'active' : '' }}">
             <a href="/ujikompetensi" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-notepad"></i>
                 <div data-i18n="Analytics">Uji Kompetensi</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ Request::is('tebak-gambar') ? 'active' : '' }}">
             <a href="/tebak-gambar" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-file-image"></i>
                 <div data-i18n="Analytics">Tebak Gambar</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ Request::is('scoretebakgambar') ? 'active' : '' }}">
             <a href="/scoretebakgambar" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-crown"></i>
                 <div data-i18n="Analytics">Score Tebak Gambar</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ Request::is('scoreujikom') ? 'active' : '' }}">
             <a href="/scoreujikom" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-crown"></i>
                 <div data-i18n="Analytics">Score Uji Kompetensi</div>
             </a>
         </li>
-
-
-
     </ul>
+    
 </aside>

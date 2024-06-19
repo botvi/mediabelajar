@@ -132,7 +132,8 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <small class="text-muted">Admin</small>
+                            <span class="fw-semibold d-block">{{ Auth::user()->nama }}</span>
+                            <small class="text-muted">{{ Auth::user()->role }}</small>
                           </div>
                         </div>
                       </a>
