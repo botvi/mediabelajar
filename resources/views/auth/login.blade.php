@@ -64,7 +64,7 @@
     <script src="{{ asset('admin') }}/assets/js/config.js"></script>
   </head>
 
-  <body>
+  <body style="background-color: #26355d">
     <!-- Content -->
 
     <div class="container-xxl">

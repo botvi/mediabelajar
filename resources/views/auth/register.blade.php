@@ -24,7 +24,7 @@
     <script src="{{ asset('admin') }}/assets/js/config.js"></script>
 </head>
 
-<body>
+<body style="background-color: #26355d">
     <div class="container-xxl">
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner">

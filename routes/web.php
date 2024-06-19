@@ -91,7 +91,7 @@ Route::get('/geraksemu', [WebsiteController::class, 'geraksemu']);
     Route::get('/ujikom', [WebsiteController::class, 'showujikom']);
     Route::get('/startujikom', [WebsiteController::class, 'ujikom'])->middleware('role:admin,user');
     Route::post('/save-score', [HasilujikomController::class, 'store']);
-    Route::get('/leaderboardujikom', [HasilujikomController::class, 'leaderboardujikom']);
+    Route::get('/leaderboardujikom', [HasilujikomController::class, 'leaderboardujikom'])->middleware('role:admin,user');
 // ujikom
 
 // belajar tebak gambar
@@ -99,7 +99,7 @@ Route::get('/gettebakgambar', [TebakGambarController::class, 'getTebakGambar']);
 Route::get('/bermain', [WebsiteController::class, 'showtebakgambar']);
 Route::get('/starttebakgambar', [WebsiteController::class, 'tebakgambar'])->middleware('role:admin,user');
 Route::post('/save-completion-time', [HasiltebakgambarController::class, 'saveCompletionTime']);
-Route::get('/leaderboardtebakgambar', [HasiltebakgambarController::class, 'leaderboardtebakgambar']);
+Route::get('/leaderboardtebakgambar', [HasiltebakgambarController::class, 'leaderboardtebakgambar'])->middleware('role:admin,user');
 
 // belajar tebak gambar
 
